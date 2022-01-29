@@ -8,36 +8,36 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-.navbar {
+.navbar{
 	display: flex;
 	justify-content: space-between;
-	background-color: rgb(215, 220, 224);
+	background: linear-gradient(to right, #b9538b 0%, #c39ee6 100%);
 	height: 50px;
+    margin: 0 auto;
+    width:80%
 }
 
-.logo {
+.logo img {
+    height: 40px;
+    padding: 2px;
     padding-left: 30px;
 	align-self: center;
-    color:rgb(228, 157, 128);
 }
 
-.nav-menu{
+.nav-menu{ 
+    display: flex;
     align-self: center;
     padding-right: 30px;
-}
-
-.nav-menu {
-	display: flex;
     gap: 10px;
 }
 
-.cart,.admin{
-    color:rgb(228, 157, 128);
+.cart,.admin, a{
+    color:rgb(2, 8, 22);
+    text-decoration: none;
     display: flex;
+    justify-content: center;
     gap: 5px;
-    border: 1.5px solid rgb(228, 157, 128);
-    border-radius: 5px;
-    padding: 3px;
+    padding: 2px;
     cursor:pointer;
 }
 
