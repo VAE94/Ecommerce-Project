@@ -13,7 +13,7 @@ window.addEventListener('load', async () => {
 			<div class="card-body">
                <img class="img-fluid" src="${product.image}" alt="Product Image"/>
 	  			<h5 class="card-title">${product.name}</h5>
-                <p class="card-text">${product.price}</p>
+                <p class="card-text">${product.price} €</p>
 	  			<p class="card-text">${product.description}</p>
 	  			<button data-product-id=${product.id} class="btn btn-primary">Add to cart</button>
 			</div>
