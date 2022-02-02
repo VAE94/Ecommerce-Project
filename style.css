@@ -8,24 +8,32 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+.wrapper{
+    margin-top: 70px;
+    margin-left: 200px;
+    gap:20px;
+
+}
+
 .logo{
 display: flex;
 }
 
-.cart,.admin, a{
+.cart, .admin, a{
     color:rgb(2, 8, 22);
     text-decoration: none;
     display: flex;
     padding: 2px;
 }
 
+.cart, .admin, a:hover{
+    color: rgb(199, 11, 99);
+}
+
 .menu-icon{
 padding: 2px;
 }
 
-.cart, .admin, a:hover{
-    color: rgb(199, 11, 99);
-}
 
 #navbarSupportedContent > ul > li:nth-child(1) > a:hover{
     color: rgb(199, 11, 99);
@@ -62,4 +70,10 @@ border-color:#ced4da;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 10px;
 }
+.face-products{
+    padding: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 10px;
 
+}

@@ -39,19 +39,19 @@
         </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="products.html" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Products
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="products.html">Face</a></li>
+                            <ul class="dropdown-menu" id="myDropdown" aria-labelledby="navbarDropdown">
+                                <li><button class="dropdown-item"  id="face-products" href="face-products.html">Face</button>
+                                </li>
                                 <li><a class="dropdown-item" href="products.html">Make-up</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -59,7 +59,8 @@
                                 <li><a class="dropdown-item" href="products.html">Body</a></li>
                                 <li><a class="dropdown-item" href="products.html">Hair</a></li>
                             </ul>
-                        </li>
+                            
+                        </div>
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -68,9 +69,14 @@
                 </div>
             </div>
         </nav>
-        <div class="product-details"></div>
-    </div>
-    <script src="./src/details.js"></script>
+        <div class="products-container"></div>
+        <div class="face-products"></div>
+        <!-- <div class="body-products"></div>
+        <div class="hair-products"></div>
+        <div class="makeup-products"></div>
+    </div> -->
+    <script src="./src/products.js"></script>
+    <script src="src/face-products.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
