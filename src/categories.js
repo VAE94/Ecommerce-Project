@@ -23,7 +23,6 @@ faceProducts.addEventListener('click', async () => {
 		.join('');
 
 	productContainer.innerHTML = cards;
-    console.log(faceProducts);
 
 })
 
@@ -84,7 +83,7 @@ bodyProducts.addEventListener('click', async () => {
 
 let hairProducts = document.getElementById('hair-products');
 
-bodyProducts.addEventListener('click', async () => {
+hairProducts.addEventListener('click', async () => {
     const productsURL = 'https://61fab05892093f0017ad99d0.mockapi.io/HAIR';
 	const result = await fetch(productsURL);
 	const products = await result.json();
