@@ -57,11 +57,19 @@ border-color:#ced4da;
 .btn-primary{
     background-color: rgb(231, 89, 156);
     border-color:#ced4da;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin:0 auto;
 }
 
 .btn-primary:hover{
     border-color:#ced4da;
     background-color: rgb(199, 11, 99);
+}
+
+.btn-cart{
+    margin-left: 5px;
 }
 
 .products-container {
@@ -70,10 +78,9 @@ border-color:#ced4da;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 10px;
 }
-.face-products{
+.categories-container{
     padding: 20px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 10px;
-
 }

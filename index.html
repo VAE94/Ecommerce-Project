@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./icons/logo.png">
+    <link rel="icon" type="image/x-icon" href="./icons/logo2.png">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="node_modules/roboto-fontface/css/roboto/roboto-fontface.css" />
@@ -46,19 +46,19 @@
                             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="products.html" id="navbarDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="categories.html" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Products
+                              Categories
                             </a>
                             <ul class="dropdown-menu" id="myDropdown" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="products.html">Face</a>
+                                <li><button class="dropdown-item" href="categories.html" id="face-products">Face</button>
                                 </li>
-                                <li><a class="dropdown-item" href="products.html">Make-up</a></li>
+                                <li><button class="dropdown-item" href="categories.html" id="makeup-products">Make-up</button></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="products.html">Body</a></li>
-                                <li><a class="dropdown-item" href="products.html">Hair</a></li>
+                                <li><button class="dropdown-item" href="categories.html" id="body-products">Body</button></li>
+                                <li><button class="dropdown-item" href="categories.html" id="hair-products">Hair</button></li>
                             </ul>
                             
                         </div>
@@ -72,7 +72,7 @@
         </nav>
         <div class="products-container"></div>
         </div>
-        <script type="module" src="./src/app.js"></script>
+        <script src="./src/app.js"></script>
         <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

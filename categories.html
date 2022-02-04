@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./icons/details.png" />
+    <link rel="icon" type="image/x-icon" href="./icons/" />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="node_modules/roboto-fontface/css/roboto/roboto-fontface.css" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Details</title>
+    <title>Categories</title>
 </head>
 
 <body>
@@ -45,21 +45,23 @@
                             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="products.html" id="navbarDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="categories.html" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Products
+                               Categories
                             </a>
                             <ul class="dropdown-menu" id="myDropdown" aria-labelledby="navbarDropdown">
-                                <li><button class="dropdown-item"  id="face-products" href="face-products.html">Face</button>
+                                <li><button class="dropdown-item" id="face-products"
+                                        href="categories.html">Face</button>
                                 </li>
-                                <li><a class="dropdown-item" href="products.html">Make-up</a></li>
+                                <li><button class="dropdown-item" href="categories.html"
+                                        id="makeup-products">Make-up</button></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="products.html">Body</a></li>
-                                <li><a class="dropdown-item" href="products.html">Hair</a></li>
+                                <li><button class="dropdown-item" href="categories.html" id="body-products">Body</button></li>
+                                <li><button class="dropdown-item" href="categories.html" id="hair-products">Hair</button></li>
                             </ul>
-                            
+
                         </div>
                     </ul>
                     <form class="d-flex">
@@ -69,14 +71,9 @@
                 </div>
             </div>
         </nav>
-        <div class="products-container"></div>
-        <div class="face-products"></div>
-        <!-- <div class="body-products"></div>
-        <div class="hair-products"></div>
-        <div class="makeup-products"></div>
-    </div> -->
-    <script src="./src/products.js"></script>
-    <script src="src/face-products.js"></script>
+        <div class="categories-container"></div>
+    </div>
+    <script src="src/categories.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
