@@ -9,13 +9,13 @@ window.addEventListener('load', async () => {
 	const product = await result.json();
 
 	const productCard = `
-            <div class="card mt-4">
-			<div class="card-body card-details">
+            <div class="card mt-4 card-details">
+			<div class="card-body">
                <img class="img-fluid" src="${product.image}" alt="Product Image"/>
-	  			<h5 class="card-title">${product.name}</h5>
-                <p class="card-text">${product.price} €</p>
-	  			<p class="card-text">${product.description}</p>
-	  			<button data-product-id=${product.id} class="btn btn-primary btn-cart">Add to cart</button>
+	  			<h5 class="card-title text-center">${product.name}</h5>
+                <p class="card-text text-center">${product.price} €</p>
+	  			<p class="card-text text-center">${product.description}</p>
+	  			<button data-product-id=${product.id} class="main-btn">Add to cart</button>
 			</div>
  		</div>`;
 

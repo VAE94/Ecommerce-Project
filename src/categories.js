@@ -21,8 +21,10 @@ faceProducts.addEventListener('click', async () => {
             </div>`
 		)
 		.join('');
+        
 
 	productContainer.innerHTML = cards;
+
 
 })
 
