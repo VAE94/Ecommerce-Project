@@ -9,12 +9,15 @@ window.addEventListener('load', async () => {
 	const product = await result.json();
 
 	const productCard = `
-            <div class="card mt-4 card-details">
-			<div class="card-body">
-               <img class="img-fluid" src="${product.image}" alt="Product Image"/>
+				<div class="card mt-4 card-details">
+				<div class="card-body">
+               <img class="rounded mx-auto d-block img-details p-4" src="${product.image}" alt="Product Image"/>
 	  			<h5 class="card-title text-center">${product.name}</h5>
                 <p class="card-text text-center">${product.price} €</p>
 	  			<p class="card-text text-center">${product.description}</p>
+				<p class="card-text text-center"><i class="far fa-credit-card"></i> Secure payment</p>
+			    <p class="card-text text-center me-4"><i class="fas fa-shuttle-van"></i> Fast delivery</p>
+			    <p class="card-text text-center"><i class="fas fa-exchange-alt"></i> Return possible</p>
 	  			<button data-product-id=${product.id} class="main-btn">Add to cart</button>
 			</div>
  		</div>`;
@@ -43,3 +46,7 @@ async function addToCart(event) {
 
 	localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+//banner cu discount si animatie
+//sa stilizez imaginea
+//webkit scale 
