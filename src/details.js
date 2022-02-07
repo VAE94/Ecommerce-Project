@@ -36,10 +36,19 @@ async function addToCart(event) {
 
 	let cart;
 	if (localStorage.getItem('cart') == null) {
-		cart = [product];
+		cart = [{...product, noOfProducts: 1}];
 	} else {
 		cart = JSON.parse(localStorage.getItem('cart'));
-		cart.push(product);
+		const productInCart = cart.find((productFromCart) => productFromCart.id == product.id);
+		if(productInCart != undefined){
+			productInCart.noOfProducts++;
+			console.log('Produsul exista in cos');
+		}else{
+			const productToBeAddedInCart = {...product, noOfProducts:1};
+			cart.push(productToBeAddedInCart);
+			console.log('Produsul a fost adaugat prima oara in cos');
+		}
+	
 	}
 
 	console.log(cart);
@@ -47,6 +56,3 @@ async function addToCart(event) {
 	localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-//banner cu discount si animatie
-//sa stilizez imaginea
-//webkit scale 
