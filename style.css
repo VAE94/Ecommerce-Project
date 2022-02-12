@@ -64,6 +64,13 @@ border-color:#ced4da;
     background-color: rgb(199, 11, 99);
     color:white;
 }
+/*main*/
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+}
 
 /*details*/
 
@@ -72,12 +79,13 @@ border-color:#ced4da;
     border-color:white;
     border-radius: 10px;
     color:white;
+    margin:0 auto;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     width: 200px;
     height:40px;
-    margin:0 auto;
+  
 }
 
 .main-btn:hover{
@@ -183,4 +191,10 @@ margin-top:20px;
     background-color: rgb(199, 11, 99);
     color:white;
     width:30px;
+}
+
+.border-total{
+background-color: rgb(199, 11, 99);
+color:white;
+padding:5px;
 }

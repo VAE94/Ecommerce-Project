@@ -11,11 +11,12 @@ window.addEventListener('load', () => {
 		const productCards = products
 			.map(
 				(product) =>
-					`<div class="card w-75 mt-4">
-              <div class="card-body">
-               <h5 class="card-title">${product.name}</h5>
-            <p class="card-text">${product.price} €</p>
-            <p class="card-text">Quantity:
+			`<div class="card w-75 mt-4">
+              <div class="card-body mx-auto">
+			  <img class="card-img-top img-fluid" style="width:250px;" src="${product.image}" alt="Product Image"/>
+               <h6 class="card-title text-center mt-2">${product.name}</h6>
+              <p class="card-text text-center">${product.price} €</p>
+              <p class="card-text text-center">Quantity:
 			  <button  data-product-id=${product.id} class="remove-products cart-btn"> - </button>
 		    <span class="cart-products"> ${product.noOfProducts}</span>
 			<button  data-product-id=${product.id} class="add-products cart-btn"> + </button>
@@ -26,7 +27,7 @@ window.addEventListener('load', () => {
 			)
 			.join('');
 
-		let totalPriceCard = `<div> TOTAL: ${total} €</div>`;
+		let totalPriceCard = `<div class="mt-2 border-total" style="width:100px;">TOTAL: ${total} €</div>`;
 		document.querySelector('.cart-container').innerHTML =
 			productCards + totalPriceCard;
 	}
