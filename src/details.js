@@ -11,7 +11,7 @@ window.addEventListener('load', async () => {
 	const productCard = `
 				<div class="card mt-4 card-details">
 				<div class="card-body">
-               <img class="rounded mx-auto d-block img-details p-4" src="${product.image}" alt="Product Image"/>
+                <img class="rounded mx-auto d-block img-details p-4" src="${product.image}" alt="Product Image"/>
 	  			<h5 class="card-title text-center">${product.name}</h5>
                 <p class="card-text text-center">${product.price} €</p>
 	  			<p class="card-text text-center">${product.description}</p>

@@ -101,8 +101,8 @@ width:700px;
 }
 
 .img-details:hover{
-    animation: zoom-in-zoom-out 1s ease 3;
-}
+ animation: zoom-in-zoom-out 1s ease 3;
+} 
 
 @keyframes zoom-in-zoom-out {
     0% {

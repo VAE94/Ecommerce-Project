@@ -111,3 +111,4 @@ hairProducts.addEventListener('click', async () => {
 })
 
 
+
