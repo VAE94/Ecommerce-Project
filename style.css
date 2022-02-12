@@ -69,17 +69,18 @@ border-color:#ced4da;
 
 .main-btn{
     background-color: rgb(231, 89, 156);
-    border-color:#ced4da;
-    border-radius: 5%;
+    border-color:white;
+    border-radius: 10px;
     color:white;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 200px;
+    height:40px;
     margin:0 auto;
 }
 
 .main-btn:hover{
-    border-color:#ced4da;
     color:white;
     background-color: rgb(199, 11, 99);
 }
@@ -182,5 +183,4 @@ margin-top:20px;
     background-color: rgb(199, 11, 99);
     color:white;
     width:30px;
-    border-radius: 10%;
 }
