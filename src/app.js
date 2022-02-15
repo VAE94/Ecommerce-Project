@@ -53,8 +53,6 @@ async function addToCart(event) {
 	
 	}
 
-	console.log(cart);
-
 	localStorage.setItem('cart', JSON.stringify(cart));
 }
 

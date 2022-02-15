@@ -5,7 +5,6 @@ window.addEventListener('load', () => {
 	if (cart) {
 		cart.forEach((product) => {
 			total = total + Number(product.price) * product.noOfProducts;
-			console.log(product.price);
 		});
 
 		const productCards = cart
@@ -69,10 +68,12 @@ function handleCartEvents(event) {
 			let total = 0;
 			cart.forEach((product) => {
 				total = total + Number(product.price) * product.noOfProducts;
-				console.log(product.price);
 			});
 	
 			let totalPriceCard = `<div class="total-price">TOTAL: ${total} €</div>`;
-			document.querySelector('.total-price-container').innerHTML = totalPriceCard;
+			document.querySelector('.total-price-container').innerHTML = totalPriceCard;		
+		}else if(totalPriceCard == 0){
+		totalPriceCard.classList.remove('.total-price');
 		}
-}
+
+	}
