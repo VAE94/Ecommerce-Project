@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./icons/details.png" />
+    <link rel="icon" type="image/x-icon" href="./icons/" />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="node_modules/roboto-fontface/css/roboto/roboto-fontface.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Details</title>
+    <title>Categories</title>
 </head>
 
 <body>
@@ -41,23 +40,22 @@
         </div>
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
             <div class="container-fluid">
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="make-up-products.html" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown"  aria-expanded="false">
                                 Categories
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="face-products.html"
-                                        id="face-products">Face</a></li>
-                                <li><a class="dropdown-item" href="make-up-products.html"
-                                        id="makeup-products">Make-up</a>
+                            <ul class="dropdown-menu" id="myDropdown" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" id="face-products"
+                                        href="face-products.html">Face</a>
                                 </li>
+                                <li><a class="dropdown-item" href="make-up-products.html"
+                                        id="makeup-products">Make-up</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -66,7 +64,8 @@
                                 <li><a class="dropdown-item" href="hair-products.html"
                                         id="hair-products">Hair</a></li>
                             </ul>
-                        </li>
+
+                        </div>
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -75,12 +74,8 @@
                 </div>
             </div>
         </nav>
-        <div class="banner animate__animated animate__flash">
-            <img id="img-banner" src="./icons/DISCOUNT.png" alt="Discount banner" />
-        </div>
-        <div class="product-details"></div>
+        <div class="categories-container"></div>
     </div>
-
     <footer class="bg-dark text-center text-white footer">
         <div class="container p-4">
             <section class="mb-4">
@@ -120,13 +115,13 @@
                     <p><i class="fas fa-phone"></i> +40 760 174 996</p>
                     <mail><i class="fas fa-envelope-open"></i> naturalbeauty@gmail.com</mail>
                 </div>
-                <div class="copyright">
-                    <p>Copyright © Naturalbeauty.com
-                        All rights reserved</p>
-                </div>
             </section>
+            <div class="copyright">
+                <p>Copyright © Naturalbeauty.com
+                    All rights reserved</p>
+            </div>
     </footer>
-    <script src="./src/details.js"></script>
+    <script src="./src/make-up-products.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

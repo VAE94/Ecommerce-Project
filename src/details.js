@@ -36,23 +36,18 @@ async function addToCart(event) {
 
 	let cart;
 	if (localStorage.getItem('cart') == null) {
-		cart = [{...product, noOfProducts: 1}];
+		cart = [{ ...product, noOfProducts: 1 }];
 	} else {
 		cart = JSON.parse(localStorage.getItem('cart'));
-		const productInCart = cart.find((productFromCart) => productFromCart.id == product.id);
-		if(productInCart != undefined){
+		const productInCart = cart.find(
+			(productFromCart) => productFromCart.id == product.id
+		);
+		if (productInCart != undefined) {
 			productInCart.noOfProducts++;
-			console.log('Produsul exista in cos');
-		}else{
-			const productToBeAddedInCart = {...product, noOfProducts:1};
+		} else {
+			const productToBeAddedInCart = { ...product, noOfProducts: 1 };
 			cart.push(productToBeAddedInCart);
-			console.log('Produsul a fost adaugat prima oara in cos');
 		}
-	
 	}
-
-	console.log(cart);
-
-	localStorage.setItem('cart', JSON.stringify(cart));
+	if (cart.length > 0) localStorage.setItem('cart', JSON.stringify(cart));
 }
-

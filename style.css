@@ -1,6 +1,5 @@
 * {
 	box-sizing: border-box;
-
 }
 
 :root {
@@ -26,23 +25,22 @@ body {
 	display: flex;
 }
 
-.cart,
-.admin,
-a {
+
+.cart, .admin, a {
 	color: rgb(2, 8, 22);
 	text-decoration: none;
 	display: flex;
-	padding: 2px;
 }
 
 .cart,
 .admin,
 a:hover {
 	color: rgb(199, 11, 99);
+	display: flex;
 }
 
 .menu-icon {
-	padding: 2px;
+	padding-left: 2px;
 }
 
 #navbarSupportedContent > ul > li:nth-child(1) > a:hover {
@@ -95,9 +93,8 @@ a:hover {
 
 .card-details {
 	width: 1000px;
-    margin: 0 auto;
-    box-shadow: 10px 15px 10px rgb(214, 208, 211);
-	
+	margin: 0 auto;
+	box-shadow: 10px 15px 10px rgb(214, 208, 211);
 }
 
 .banner {
@@ -133,12 +130,12 @@ a:hover {
 	gap: 10px;
 }
 
-/* .categories-container{
+.categories-container{
     padding: 20px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 10px;
-} */
+}
 
 /*cart*/
 .cart-products {
@@ -148,20 +145,20 @@ a:hover {
 
 .cart-btn {
 	background-color: rgb(199, 11, 99);
-    margin: 0 auto;
-    border: 1px solid white;
+	margin: 0 auto;
+	border: 1px solid white;
 	color: white;
 	width: 30px;
 }
 
 .empty-cart {
-	background-color: rgb(12, 9, 10);;
-    border: 1px solid white;
+	background-color: rgb(12, 9, 10);
+	border: 1px solid white;
 	border-radius: 10px;
 	color: white;
-	width: 200px;
+	width: 250px;
 	height: 40px;
-	margin: 0 auto;
+	margin: 2px auto;
 }
 
 .total-price {
@@ -170,10 +167,58 @@ a:hover {
 	border: 1px solid white;
 	color: white;
 	padding: 5px;
-    margin-top: 2px;
+	margin-top: 5px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.empty-cart-message {
+	display: flex;
+	justify-content: center;
+	margin-top:20px;
+}
+
+/*admin*/
+.product-form{
+	display: flex;
+	flex-direction: column;
+	width: 700px;
+	margin: 20px auto;
+	gap:20px;
+}
+.add-new-product{
+	background-color: rgb(231, 89, 156);
+	border: 1px solid white;
+	border-radius: 10px;
+	color: white;
+	margin: 10px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	height: 40px;
+}
+.update-product{
+	background-color: rgb(231, 89, 156);
+	border: 1px solid white;
+	border-radius: 10px;
+	color: white;
+	margin: 10px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	height: 40px;
+}
+.add-new-product:hover {
+	color: white;
+	background-color: rgb(199, 11, 99);
+}
+
+.thead-description{
+	display: flex;
+	justify-content: center;
 }
 
 /*footer*/
