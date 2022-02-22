@@ -180,7 +180,8 @@ a:hover {
 }
 
 .cart-info{
-	margin: 2px auto;
+	margin-top:10px;
+	font-size: 12px;
 	font-weight: bolder;
 }
 

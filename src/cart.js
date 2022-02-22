@@ -1,14 +1,20 @@
+	//update nav-cart
+	function updateCartInfo(cart) {
+		let cartInfo = 0;
+		cart.forEach((product) => {
+			cartInfo = cartInfo + product.noOfProducts;
+		});
+		document.querySelector('.cart-info').innerHTML = cartInfo;
+	}
+
 window.addEventListener('load', () => {
 	const cart = JSON.parse(localStorage.getItem('cart'));
-
 	//total price
-
 	let total = 0;
 	if (cart) {
 		cart.forEach((product) => {
 			total = total + Number(product.price) * product.noOfProducts;
 		});
-		updateCartInfo();
 
 		//cards
 		const productsCards = cart
@@ -34,18 +40,11 @@ window.addEventListener('load', () => {
 		document.querySelector('.cart-container').innerHTML = productsCards;
 		document.querySelector('.total-price-container').innerHTML = totalPriceCard;
 	}
+	updateCartInfo(cart);
 
-	function updateCartInfo() {
-		let cartInfo = 0;
-		cart.forEach((product) => {
-			cartInfo = cartInfo + product.noOfProducts;
-		});
-		document.querySelector('.cart-info').innerHTML = cartInfo;
-		console.log(cartInfo);
-	}
 });
 
-// incremedent and decrement buttons
+// increment and decrement buttons
 const cartContainer = document.querySelector('.cart-container');
 cartContainer.addEventListener('click', handleCartEvents);
 
@@ -62,15 +61,15 @@ function handleCartEvents(event) {
 
 	if (targetButton.classList.contains('remove-products')) {
 		if (productInCart.noOfProducts > 0) productInCart.noOfProducts--;
-		updateCartInfo();
+		updateCartInfo(cart);
 	} else if (targetButton.classList.contains('add-products')) {
 		productInCart.noOfProducts++;
-		updateCartInfo();
+		updateCartInfo(cart);
 	} else if (targetButton.classList.contains('empty-cart')) {
 		productInCart.noOfProducts = 0;
 		cart = cart.filter((product) => product.id != productInCart.id);
 		targetButton.parentNode.remove();
-		updateCartInfo();
+		updateCartInfo(cart);
 	}
 
 	localStorage.setItem('cart', JSON.stringify(cart));
@@ -83,14 +82,5 @@ function handleCartEvents(event) {
 		});
 		let totalPriceCard = `<div class="total-price">TOTAL: ${total} €</div>`;
 		document.querySelector('.total-price-container').innerHTML = totalPriceCard;
-	}
-	//update nav-cart
-	function updateCartInfo() {
-		let cartInfo = 0;
-		cart.forEach((product) => {
-			cartInfo = cartInfo + product.noOfProducts;
-		});
-		document.querySelector('.cart-info').innerHTML = cartInfo;
-		console.log(cartInfo);
-	}
+	} 
 }

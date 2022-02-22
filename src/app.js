@@ -1,10 +1,8 @@
-
 window.addEventListener('load', async () => {
 
 	const productsURL = 'https://61f2da932219930017f50933.mockapi.io/Products';
 	const result = await fetch(productsURL);
 	const products = await result.json();
-
 
 	const productsContainer = document.querySelector('.products-container');
 	
@@ -26,6 +24,7 @@ window.addEventListener('load', async () => {
 		.join('');
 		
 	productsContainer.innerHTML = cards;
+		
 });
 
 document.querySelector('.products-container').addEventListener('click', addToCart);
@@ -54,14 +53,14 @@ async function addToCart(event) {
 		}
 	}
 	if (cart.length > 0) localStorage.setItem('cart', JSON.stringify(cart));
-
-	function updateCartInfo() {
-		let cartInfo = 0;
-		cart.forEach((product) => {
-			cartInfo = cartInfo + product.noOfProducts;
-		});
-		document.querySelector('.cart-info').innerHTML = cartInfo;
-		console.log(cartInfo);
-		}
+	//update nav-cart
+function updateCartInfo() {
+	let cartInfo = 0;
+	cart.forEach((product) => {
+		cartInfo = cartInfo + product.noOfProducts;
+	});
+	document.querySelector('.cart-info').innerHTML = cartInfo;
+}
+		
 }
 
