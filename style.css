@@ -179,6 +179,11 @@ a:hover {
 	margin-top:20px;
 }
 
+.cart-info{
+	margin: 2px auto;
+	font-weight: bolder;
+}
+
 /*admin*/
 .product-form{
 	display: flex;

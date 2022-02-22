@@ -5,6 +5,7 @@ window.addEventListener('load', async () => {
 	const result = await fetch(productsURL);
 	const products = await result.json();
 
+
 	const productsContainer = document.querySelector('.products-container');
 	
 	const cards = products
@@ -36,22 +37,31 @@ async function addToCart(event) {
 	const result = await fetch(productsURL);
 	const product = await result.json();
 
-	let cart;
+	let cart = [];
 	if (localStorage.getItem('cart') == null) {
 		cart = [{...product, noOfProducts: 1}];
+		updateCartInfo();
 	} else {
 		cart = JSON.parse(localStorage.getItem('cart'));
 		const productInCart = cart.find((productFromCart) => productFromCart.id == product.id);
 		if(productInCart != undefined){
 			productInCart.noOfProducts++;
+			updateCartInfo();
 		}else{
 			const productToBeAddedInCart = {...product, noOfProducts:1};
 			cart.push(productToBeAddedInCart);
+			updateCartInfo();
 		}
 	}
+	if (cart.length > 0) localStorage.setItem('cart', JSON.stringify(cart));
 
-	localStorage.setItem('cart', JSON.stringify(cart));
+	function updateCartInfo() {
+		let cartInfo = 0;
+		cart.forEach((product) => {
+			cartInfo = cartInfo + product.noOfProducts;
+		});
+		document.querySelector('.cart-info').innerHTML = cartInfo;
+		console.log(cartInfo);
+		}
 }
-
-
 
