@@ -49,8 +49,11 @@ a:hover {
 #navbarDropdown:hover {
 	color: rgb(199, 11, 99);
 }
+#navbarSupportedContent > ul > li:nth-child(3) > a:hover{
+	color: rgb(199, 11, 99);
+}
 
-#navbarSupportedContent > form > button {
+/* #navbarSupportedContent > form > button {
 	color: black;
 	border-color: #ced4da;
 }
@@ -58,7 +61,7 @@ a:hover {
 #navbarSupportedContent > form > button:hover {
 	background-color: rgb(199, 11, 99);
 	color: white;
-}
+} */
 .dropdown-item:hover {
 	background-color: rgb(199, 11, 99);
 	color: white;
@@ -161,6 +164,7 @@ a:hover {
 	margin: 2px auto;
 }
 
+
 .total-price {
 	background-color: rgb(199, 11, 99);
 	width: 150px;
@@ -168,6 +172,7 @@ a:hover {
 	color: white;
 	padding: 5px;
 	margin-top: 5px;
+	margin-left: 165px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -185,11 +190,20 @@ a:hover {
 	font-weight: bolder;
 }
 
+.hide-containers{
+	display: none;
+}
+
+.cart-message{
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
 /*admin*/
 .product-form{
 	display: flex;
 	flex-direction: column;
-	width: 700px;
+	width: 500px;
 	margin: 20px auto;
 	gap:20px;
 }
@@ -227,19 +241,38 @@ a:hover {
 	justify-content: center;
 }
 
+/* contact-info */
+.contact{
+ display: flex;
+ margin-top:20px;
+
+}
+
+.contact  p{
+	margin-top: 0;
+	margin-bottom: 1rem;
+	text-align: justify;
+}
+
 /*footer*/
 .footer {
 	margin-top: 200px;
 }
 
+.social-media-container{
+	display: flex;
+	justify-content: center;
+}
+
 .social-media {
-	width: 70px;
+	width: 50px;
 }
 
 .social-media:hover {
 	background-color: rgb(199, 11, 99);
 	color: white;
 }
+
 
 .footer-details {
 	display: flex;
@@ -258,14 +291,8 @@ a:hover {
 	font-size: 0.8rem;
 }
 
-.contact {
-	display: flex;
-	flex-direction: column;
-	margin-right: 1000px;
-	margin-top: 20px;
-}
-
 .copyright {
 	font-size: 0.8rem;
-	margin-top: 25px;
+	margin-top: 50px;
+	text-align: center;
 }

@@ -33,32 +33,34 @@ async function addToCart(event) {
 	const productsURL = `https://61f2da932219930017f50933.mockapi.io/Products/${productId}`;
 	const result = await fetch(productsURL);
 	const product = await result.json();
-
+	
 	let cart = [];
 	if (localStorage.getItem('cart') == null) {
 		cart = [{ ...product, noOfProducts: 1 }];
-		updateCartInfo();
+		updateCartInfo(cart);
 	} else {
 		cart = JSON.parse(localStorage.getItem('cart'));
 		const productInCart = cart.find(
 			(productFromCart) => productFromCart.id == product.id
 		);
+
 		if (productInCart != undefined) {
 			productInCart.noOfProducts++;
-			updateCartInfo();
+			updateCartInfo(cart);
 		} else {
 			const productToBeAddedInCart = { ...product, noOfProducts: 1 };
 			cart.push(productToBeAddedInCart);
-			updateCartInfo();
+			updateCartInfo(cart);
 		}
 	}
-	if (cart.length > 0) localStorage.setItem('cart', JSON.stringify(cart));
+	if (cart.length > 0)localStorage.setItem('cart', JSON.stringify(cart));
 
-	function updateCartInfo() {
+	function updateCartInfo(cart) {
 		let cartInfo = 0;
 		cart.forEach((product) => {
 			cartInfo = cartInfo + product.noOfProducts;
 		});
 		document.querySelector('.cart-info').innerHTML = cartInfo;
 	}
+
 }

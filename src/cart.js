@@ -1,11 +1,13 @@
-	//update nav-cart
-	function updateCartInfo(cart) {
-		let cartInfo = 0;
-		cart.forEach((product) => {
-			cartInfo = cartInfo + product.noOfProducts;
-		});
-		document.querySelector('.cart-info').innerHTML = cartInfo;
-	}
+
+
+//update nav-cart
+function updateCartInfo(cart) {
+	let cartInfo = 0;
+	cart.forEach((product) => {
+		cartInfo = cartInfo + product.noOfProducts;
+	});
+	document.querySelector('.cart-info').innerHTML = cartInfo;
+}
 
 window.addEventListener('load', () => {
 	const cart = JSON.parse(localStorage.getItem('cart'));
@@ -20,9 +22,9 @@ window.addEventListener('load', () => {
 		const productsCards = cart
 			.map(
 				(product) =>
-					`<div class="card w-75 mt-4">
+				`<div class="card w-75 mt-4 mx-auto">
               <div class="card-body mx-auto">
-			  <img class="card-img-top img-fluid" style="width:400px;" src="${product.image}" alt="Product Image"/>
+			  <img class="card-img img-fluid" style="width:400px;" src="${product.image}" alt="Product Image"/>
                <h6 class="card-title text-center mt-2">${product.name}</h6>
               <p class="card-text text-center fs-5">${product.price} €</p>
               <p class="card-text text-center">Quantity:
@@ -39,9 +41,10 @@ window.addEventListener('load', () => {
 		let totalPriceCard = `<div class="total-price">TOTAL: ${total} €</div>`;
 		document.querySelector('.cart-container').innerHTML = productsCards;
 		document.querySelector('.total-price-container').innerHTML = totalPriceCard;
+		updateCartInfo(cart);
+	
 	}
-	updateCartInfo(cart);
-
+	
 });
 
 // increment and decrement buttons
@@ -82,5 +85,14 @@ function handleCartEvents(event) {
 		});
 		let totalPriceCard = `<div class="total-price">TOTAL: ${total} €</div>`;
 		document.querySelector('.total-price-container').innerHTML = totalPriceCard;
-	} 
+	}
+	if (cart.length >= 0) {
+		localStorage.removeItem('cart', JSON.stringify(cart));
+		let removeBanner = document.querySelector('.hide-containers');
+		let removeTotalPrice = document.querySelector('.total-price-container');
+		removeTotalPrice.classList.add('hide-containers');
+		removeBanner.classList.remove('hide-containers');
+	}
+	
 }
+

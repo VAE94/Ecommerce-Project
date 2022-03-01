@@ -1,17 +1,16 @@
 window.addEventListener('load', async () => {
-
 	const productsURL = 'https://61f2da932219930017f50933.mockapi.io/Products';
 	const result = await fetch(productsURL);
 	const products = await result.json();
 
 	const productsContainer = document.querySelector('.products-container');
-	
+
 	const cards = products
 		.map(
 			(product) =>
 				`<div class="card">
-                 <div class="card-body">
-                 <img class="card-img-top img-fluid" src="${product.image}" alt="Product Image"/>
+                 <div class="card-body sm">
+                 <img class="card-img img-fluid" src="${product.image}" alt="Product Image"/>
                   <h5 class="card-title d-flex justify-content-center" style= "font-size: 1rem;">${product.name}</h5>
                   <p class="card-text d-flex justify-content-center">${product.price} €</p>
 				  <div class="buttons">
@@ -22,9 +21,8 @@ window.addEventListener('load', async () => {
             </div>`
 		)
 		.join('');
-		
+
 	productsContainer.innerHTML = cards;
-		
 });
 
 document.querySelector('.products-container').addEventListener('click', addToCart);
@@ -38,29 +36,62 @@ async function addToCart(event) {
 
 	let cart = [];
 	if (localStorage.getItem('cart') == null) {
-		cart = [{...product, noOfProducts: 1}];
-		updateCartInfo();
+		cart = [{ ...product, noOfProducts: 1 }];
+		updateCartInfo(cart);
 	} else {
 		cart = JSON.parse(localStorage.getItem('cart'));
-		const productInCart = cart.find((productFromCart) => productFromCart.id == product.id);
-		if(productInCart != undefined){
+		const productInCart = cart.find(
+			(productFromCart) => productFromCart.id == product.id
+		);
+		if (productInCart != undefined) {
 			productInCart.noOfProducts++;
-			updateCartInfo();
-		}else{
-			const productToBeAddedInCart = {...product, noOfProducts:1};
+			updateCartInfo(cart);
+		} else {
+			const productToBeAddedInCart = { ...product, noOfProducts: 1 };
 			cart.push(productToBeAddedInCart);
-			updateCartInfo();
+			updateCartInfo(cart);
 		}
 	}
 	if (cart.length > 0) localStorage.setItem('cart', JSON.stringify(cart));
+
 	//update nav-cart
-function updateCartInfo() {
-	let cartInfo = 0;
-	cart.forEach((product) => {
-		cartInfo = cartInfo + product.noOfProducts;
-	});
-	document.querySelector('.cart-info').innerHTML = cartInfo;
-}
-		
+	function updateCartInfo(cart) {
+		let cartInfo = 0;
+		cart.forEach((product) => {
+			cartInfo = cartInfo + product.noOfProducts;
+		});
+		document.querySelector('.cart-info').innerHTML = cartInfo;
+	}
 }
 
+//search-bar
+// let searchInput = document.getElementById('search-bar');
+// let resultsContainer = document.querySelector('.products-container'); 
+// let searchTerm = '';
+// let searchProducts;
+
+// searchInput.addEventListener('input', searchResults);
+
+// async function searchResults(event) {
+// 	searchInput = event.target;
+
+// 	const searchURL = 'https://61f2da932219930017f50933.mockapi.io/Products/';
+// 	const result = await fetch(searchURL);
+// 	const productResult = await result.json();
+
+// 	resultsContainer.innerHTML = '';
+
+// 	resultsContainer.filter((product) =>
+// 		product.name.toUpperCase().includes(searchTerm.toUpperCase())
+// 	);
+// 	resultsContainer.forEach((product) => {
+// 		`<div class="card">
+// 			 <div class="card-body">
+// 			 <img class="card-img-top img-fluid" src="${product.image}" alt="Product Image"/>
+// 			  <h5 class="card-title d-flex justify-content-center" style= "font-size: 1rem;">${product.name}</h5>
+// 		    </div>
+// 		    </div>`;
+// 		resultsContainer.innerHTML = productResult;
+// 		console.log(productResult)
+// 	});
+// }
