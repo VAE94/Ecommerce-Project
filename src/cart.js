@@ -1,5 +1,3 @@
-
-
 //update nav-cart
 function updateCartInfo(cart) {
 	let cartInfo = 0;
@@ -86,7 +84,7 @@ function handleCartEvents(event) {
 		let totalPriceCard = `<div class="total-price">TOTAL: ${total} €</div>`;
 		document.querySelector('.total-price-container').innerHTML = totalPriceCard;
 	}
-	if (cart.length >= 0) {
+	if (cart.length <= 0) {
 		localStorage.removeItem('cart', JSON.stringify(cart));
 		let removeBanner = document.querySelector('.hide-containers');
 		let removeTotalPrice = document.querySelector('.total-price-container');

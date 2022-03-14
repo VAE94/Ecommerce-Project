@@ -13,11 +13,11 @@ window.addEventListener('load', async () => {
 				`<div class="card">
                  <div class="card-body">
                  <img class="card-img" src="${product.image}" alt="Product Image"/>
-                  <h5 class="card-title d-flex justify-content-center" style= "font-size: 1rem;">${product.name}</h5>
-                  <p class="card-text d-flex justify-content-center">${product.price} €</p>
+                  <h5 class="card-title">${product.name}</h5>
+                  <p class="card-text price">${product.price} €</p>
                   <div class="buttons">
-                  <a href="details.html?product-id=${product.id}" class="main-btn">Details</a>
-				  <button data-product-id=${product.id} class="main-btn">Add to cart</button>
+                  <a href="details.html?product-id=${product.id}" class="main-btn btn-responsive">Details</a>
+				  <button data-product-id=${product.id} class="main-btn btn-responsive">Add to cart</button>
                </div>
                </div>
             </div>`

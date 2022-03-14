@@ -16,7 +16,7 @@ body {
 /* navbar */
 
 .wrapper {
-	margin-top: 70px;
+	margin-top: 80px;
 	margin-left: 200px;
 	gap: 20px;
 }
@@ -53,15 +53,6 @@ a:hover {
 	color: rgb(199, 11, 99);
 }
 
-/* #navbarSupportedContent > form > button {
-	color: black;
-	border-color: #ced4da;
-}
-
-#navbarSupportedContent > form > button:hover {
-	background-color: rgb(199, 11, 99);
-	color: white;
-} */
 .dropdown-item:hover {
 	background-color: rgb(199, 11, 99);
 	color: white;
@@ -71,7 +62,19 @@ a:hover {
 .buttons {
 	display: flex;
 	justify-content: space-between;
-	gap: 20px;
+	
+}
+
+/*home*/
+.card-title{
+display: flex;
+justify-content: center;
+text-align: center;
+}
+
+.price{
+	display: flex;
+	justify-content: center;
 }
 
 /*details*/
@@ -85,7 +88,7 @@ a:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 200px;
+	width: 150px;
 	height: 40px;
 }
 
@@ -95,19 +98,19 @@ a:hover {
 }
 
 .card-details {
-	width: 1000px;
+	width: min-content;
 	margin: 0 auto;
 	box-shadow: 10px 15px 10px rgb(214, 208, 211);
+}
+
+.description-details{
+	text-align: center;
 }
 
 .banner {
 	display: flex;
 	justify-content: center;
-	margin: 30px;
-}
-
-#img-banner {
-	width: 700px;
+	margin: 0 auto;
 }
 
 .img-details:hover {
@@ -207,6 +210,7 @@ a:hover {
 	margin: 20px auto;
 	gap:20px;
 }
+
 .add-new-product{
 	background-color: rgb(231, 89, 156);
 	border: 1px solid white;
@@ -219,6 +223,7 @@ a:hover {
 	width: 200px;
 	height: 40px;
 }
+
 .update-product{
 	background-color: rgb(231, 89, 156);
 	border: 1px solid white;
@@ -240,6 +245,7 @@ a:hover {
 	display: flex;
 	justify-content: center;
 }
+
 
 /* contact-info */
 .contact{

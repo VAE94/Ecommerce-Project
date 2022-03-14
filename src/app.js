@@ -1,3 +1,5 @@
+import searchResults from './searchBar.js';
+
 window.addEventListener('load', async () => {
 	const productsURL = 'https://61f2da932219930017f50933.mockapi.io/Products';
 	const result = await fetch(productsURL);
@@ -9,13 +11,13 @@ window.addEventListener('load', async () => {
 		.map(
 			(product) =>
 				`<div class="card">
-                 <div class="card-body sm">
+                 <div class="card-body">
                  <img class="card-img img-fluid" src="${product.image}" alt="Product Image"/>
-                  <h5 class="card-title d-flex justify-content-center" style= "font-size: 1rem;">${product.name}</h5>
-                  <p class="card-text d-flex justify-content-center">${product.price} €</p>
+                  <h5 class="card-title">${product.name}</h5>
+                  <p class="card-text price">${product.price} €</p>
 				  <div class="buttons">
-                  <a href="details.html?product-id=${product.id}" class="main-btn">Details</a>
-				  <button data-product-id=${product.id} class="main-btn">Add to cart</button>
+                  <a href="details.html?product-id=${product.id}" class="main-btn btn-responsive"  role="button">Details</a>
+				  <button data-product-id=${product.id} class="main-btn btn-responsive">Add to cart</button>
                </div>
 			   </div>
             </div>`
@@ -64,34 +66,3 @@ async function addToCart(event) {
 	}
 }
 
-//search-bar
-// let searchInput = document.getElementById('search-bar');
-// let resultsContainer = document.querySelector('.products-container'); 
-// let searchTerm = '';
-// let searchProducts;
-
-// searchInput.addEventListener('input', searchResults);
-
-// async function searchResults(event) {
-// 	searchInput = event.target;
-
-// 	const searchURL = 'https://61f2da932219930017f50933.mockapi.io/Products/';
-// 	const result = await fetch(searchURL);
-// 	const productResult = await result.json();
-
-// 	resultsContainer.innerHTML = '';
-
-// 	resultsContainer.filter((product) =>
-// 		product.name.toUpperCase().includes(searchTerm.toUpperCase())
-// 	);
-// 	resultsContainer.forEach((product) => {
-// 		`<div class="card">
-// 			 <div class="card-body">
-// 			 <img class="card-img-top img-fluid" src="${product.image}" alt="Product Image"/>
-// 			  <h5 class="card-title d-flex justify-content-center" style= "font-size: 1rem;">${product.name}</h5>
-// 		    </div>
-// 		    </div>`;
-// 		resultsContainer.innerHTML = productResult;
-// 		console.log(productResult)
-// 	});
-// }

@@ -10,14 +10,14 @@ window.addEventListener('load', async () => {
 
 	const productCard = `
 				<div class="card mt-4 card-details">
-				<div class="card-body">
+				<div class="card-body img-fluid">
                 <img class="rounded mx-auto d-block img-details p-4" src="${product.image}" alt="Product Image"/>
 	  			<h5 class="card-title text-center">${product.name}</h5>
                 <p class="card-text text-center">${product.price} €</p>
-	  			<p class="card-text text-center">${product.description}</p>
+	  			<p class="card-text  description-details">${product.description}</p>
 				<p class="card-text text-center"><i class="far fa-credit-card"></i> Secure payment</p>
 			    <p class="card-text text-center me-4"><i class="fas fa-shuttle-van"></i> Fast delivery</p>
-			    <p class="card-text text-center"><i class="fas fa-exchange-alt"></i> Return possible</p>
+			    <p class="card-text  text-center"><i class="fas fa-exchange-alt"></i> Return possible</p>
 	  			<button data-product-id=${product.id} class="main-btn">Add to cart</button>
 			</div>
  		</div>`;
