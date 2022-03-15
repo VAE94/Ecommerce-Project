@@ -70,6 +70,7 @@ a:hover {
 display: flex;
 justify-content: center;
 text-align: center;
+font-size:0.9rem;
 }
 
 .price{
@@ -189,8 +190,9 @@ text-align: center;
 
 .cart-info{
 	margin-top:10px;
-	font-size: 12px;
+	font-size: 18px;
 	font-weight: bolder;
+	color:rgb(199, 11, 99);
 }
 
 .hide-containers{

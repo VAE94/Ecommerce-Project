@@ -1,3 +1,5 @@
+//get make-up products
+
 window.addEventListener('load', async () => {
 	const productsURL = 'https://61fab05892093f0017ad99d0.mockapi.io/MAKE-UP';
 	const result = await fetch(productsURL);
@@ -25,9 +27,9 @@ window.addEventListener('load', async () => {
 	productsContainer.innerHTML = cards;
 });
 
-document
-	.querySelector('.categories-container')
-	.addEventListener('click', addToCart);
+
+//add to cart
+document.querySelector('.categories-container').addEventListener('click', addToCart);
 async function addToCart(event) {
 	const addToCartBtn = event.target;
 	let productId = addToCartBtn.getAttribute('data-product-id');
@@ -56,7 +58,7 @@ async function addToCart(event) {
 	}
 	if (cart.length > 0) localStorage.setItem('cart', JSON.stringify(cart));
 
-		
+	//update cart-info		
 	function updateCartInfo() {
 		let cartInfo = 0;
 		cart.forEach((product) => {

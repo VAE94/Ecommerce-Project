@@ -1,4 +1,4 @@
-
+//get body products
 window.addEventListener('load', async () => {
 
 	const productsURL = 'https://61fab05892093f0017ad99d0.mockapi.io/BODY';
@@ -27,6 +27,7 @@ window.addEventListener('load', async () => {
 	productsContainer.innerHTML = cards;
 });
 
+//add to cart
 document.querySelector('.categories-container').addEventListener('click', addToCart);
 async function addToCart(event) {
 	const addToCartBtn = event.target;
@@ -53,7 +54,7 @@ async function addToCart(event) {
 		}
 	
 	}
-
+	//update cart-info
 	if (cart.length > 0) localStorage.setItem('cart', JSON.stringify(cart));
 	function updateCartInfo() {
 		let cartInfo = 0;

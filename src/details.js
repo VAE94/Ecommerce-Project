@@ -1,3 +1,4 @@
+//product description
 window.addEventListener('load', async () => {
 	let searchParamString = window.location.search;
 
@@ -25,6 +26,7 @@ window.addEventListener('load', async () => {
 	document.querySelector('.product-details').innerHTML = productCard;
 });
 
+//add to cart
 document.querySelector('.product-details').addEventListener('click', addToCart);
 async function addToCart(event) {
 	const addToCartBtn = event.target;
@@ -55,6 +57,7 @@ async function addToCart(event) {
 	}
 	if (cart.length > 0)localStorage.setItem('cart', JSON.stringify(cart));
 
+	//update cart
 	function updateCartInfo(cart) {
 		let cartInfo = 0;
 		cart.forEach((product) => {

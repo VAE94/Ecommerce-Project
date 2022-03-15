@@ -1,5 +1,6 @@
 import searchResults from './searchBar.js';
 
+//get all products
 window.addEventListener('load', async () => {
 	const productsURL = 'https://61f2da932219930017f50933.mockapi.io/Products';
 	const result = await fetch(productsURL);
@@ -27,6 +28,7 @@ window.addEventListener('load', async () => {
 	productsContainer.innerHTML = cards;
 });
 
+//add to cart
 document.querySelector('.products-container').addEventListener('click', addToCart);
 async function addToCart(event) {
 	const addToCartBtn = event.target;

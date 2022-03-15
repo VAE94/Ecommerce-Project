@@ -6,7 +6,7 @@ function updateCartInfo(cart) {
 	});
 	document.querySelector('.cart-info').innerHTML = cartInfo;
 }
-
+//get cart
 window.addEventListener('load', () => {
 	const cart = JSON.parse(localStorage.getItem('cart'));
 	//total price
@@ -84,6 +84,7 @@ function handleCartEvents(event) {
 		let totalPriceCard = `<div class="total-price">TOTAL: ${total} €</div>`;
 		document.querySelector('.total-price-container').innerHTML = totalPriceCard;
 	}
+	//hide price, display empty banner
 	if (cart.length <= 0) {
 		localStorage.removeItem('cart', JSON.stringify(cart));
 		let removeBanner = document.querySelector('.hide-containers');

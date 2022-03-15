@@ -86,7 +86,7 @@ async function addNewProduct(event) {
 
 btnUpdateProduct.addEventListener('click', updateProduct);
 
-//POST
+//PUT
 async function updateProduct(event) {
 	event.preventDefault();
 	const productImage = document.getElementById('image').value;
