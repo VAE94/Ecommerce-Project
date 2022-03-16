@@ -15,7 +15,8 @@ async function searchResults(event) {
 
 	if (value && value.trim().length > 0){
 		value = value.trim().toUpperCase()
-	}	
+	}
+		
 	let filterProducts = productsResult.filter((product) =>
 	product.name.includes(value)
 	)
@@ -37,7 +38,6 @@ async function searchResults(event) {
 	.join('');
 
     resultsContainer.innerHTML = cardsSearch;
-	console.log(filterProducts);
 }
 
 export default searchResults;
